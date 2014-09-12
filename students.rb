@@ -6,6 +6,10 @@ class Student
        @last_name = last_name
        @grade = grade
     end
+    
+    def to_s
+        "#{first_name}, #{last_name}"
+    end
 end
 
 ahmed =  Student.new("Ahmed", "Nadar", 12)
@@ -14,4 +18,6 @@ gothom =  Student.new("Gothom", "Man", 9)
 freddy =  Student.new("Freddy", "Person", 7)
 
 all_students = [ahmed, tomas, gothom, freddy]
-puts all_students.inspect
+all_students.each do |student|
+    puts student
+end
