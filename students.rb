@@ -7,20 +7,17 @@ class Student
        @grade = grade
     end
     
+    def senior?
+        grade >= 11
+    end
     def to_s
         "#{first_name}, #{last_name}"
     end
 end
 
-def seniors(students)
-    senior_students = []
-    students.each do |student|
-        if student.grade >= 11
-            senior_students.push(student)
-        end
+    def seniors(students)
+        students.select {|student| student.senior? }
     end
-    return senior_students
-end
 
 ahmed =  Student.new("Ahmed", "Nadar", 12)
 tomas =  Student.new("Tomas", "James", 11)
