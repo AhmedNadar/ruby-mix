@@ -12,12 +12,22 @@ class Student
     end
 end
 
+def seniors(students)
+    senior_students = []
+    students.each do |student|
+        if student.grade >= 11
+            senior_students.push(student)
+        end
+    end
+    return senior_students
+end
+
 ahmed =  Student.new("Ahmed", "Nadar", 12)
 tomas =  Student.new("Tomas", "James", 11)
 gothom =  Student.new("Gothom", "Man", 9)
 freddy =  Student.new("Freddy", "Person", 7)
-
 all_students = [ahmed, tomas, gothom, freddy]
-all_students.each do |student|
+
+seniors(all_students).each do |student|
     puts student
 end
